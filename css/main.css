@@ -1,0 +1,43 @@
+
+/*General*/
+body {
+    background: red;
+    margin: 0;
+}
+
+/*Desktop*/
+@media screen and (min-width:600px) {
+    body {
+        height: 200vh;
+        display: grid;
+        grid-template-rows: 5rem 3rem 1fr 5rem;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        'hd'
+        'nv'
+        'mn'
+        'ft'
+    }
+
+    header {
+        grid-area: hd;
+        background: green;
+    }
+
+    nav {
+        grid-area: nv;
+        background: lemonchiffon;
+    }
+
+    main {
+        grid-area: mn;
+        background: hotpink;
+    }
+
+    footer {
+        grid-area: ft;
+        background: indianred;
+    }
+}
+
+/*Mobile*/

@@ -3,12 +3,65 @@
 body {
     background: red;
     margin: 0;
+    min-height: 100vh;
 }
+
+header {
+    grid-area: hd;
+    background: green;
+}
+
+main {
+    grid-area: mn;
+    background: darkslategray;
+}
+
+footer {
+    grid-area: ft;
+    background: indianred;
+}
+
+.menu-button i.material-icons{
+    font-size: 5rem;
+}
+
+.dynamic-menu.visible{
+    left: 0;
+}
+
+.fade-layer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 5;
+}
+
+.fade-layer.visible{
+    display: block;
+}
+
+a:link, a:visited {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-decoration: none;
+    margin: 1rem;
+  }
+  
+  a:hover, a:active {
+    background-color: rgb(73, 141, 33);
+  }
 
 /*Desktop*/
 @media screen and (min-width:600px) {
+    .menu-button {
+        display: none;
+    }
+
     body {
-        height: 200vh;
         display: grid;
         grid-template-rows: 5rem 3rem 1fr 5rem;
         grid-template-columns: 100%;
@@ -19,25 +72,58 @@ body {
         'ft'
     }
 
-    header {
-        grid-area: hd;
-        background: green;
-    }
-
-    nav {
+    .static-menu {
         grid-area: nv;
         background: lemonchiffon;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
 
-    main {
-        grid-area: mn;
-        background: hotpink;
-    }
-
-    footer {
-        grid-area: ft;
-        background: indianred;
+    .dynamic-menu {
+        display: none;
     }
 }
 
 /*Mobile*/
+
+@media screen and (max-width:600px) {
+    .menu-button {
+        cursor: pointer;
+        display: inline;
+    }
+
+    body {
+        display: grid;
+        grid-template-rows: 5rem 1fr 5rem;
+        grid-template-areas:
+        'hd'
+        'mn'
+        'ft'
+    }
+
+    .dynamic-menu {
+        height: 100vh;
+        width: 50vw;
+        background: hotpink;
+        position: fixed;
+        top: 0;
+        left: -90vw;
+        transition: left 0.3s;
+        box-shadow: 10px 0px 21px -10px rgba(0,0,0,0.75);
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dynamic-menu a {
+        display: flex;
+        justify-content: center;
+        padding: 2rem;
+        background-color: green;
+        border-radius: 2rem;
+    }
+    .static-menu {
+        display: none;
+    }
+}

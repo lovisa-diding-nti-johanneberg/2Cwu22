@@ -4,16 +4,56 @@ body {
     background: red;
     margin: 0;
     min-height: 100vh;
+    font-family: Candara, Calibri, Arial;
 }
 
 header {
     grid-area: hd;
-    background: green;
+    background: lightblue;
+    display: flex; 
+}
+
+#title {
+    color: rgb(100, 21, 43);
+    font-size: 4rem;
+    margin: 1rem
 }
 
 main {
     grid-area: mn;
-    background: darkslategray;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+    'le ri'
+}
+
+.left {
+    grid-area: le;
+    background-color: rgb(30, 109, 155);
+}
+
+.right {
+    grid-area: ri;
+    background-color: rgb(100, 21, 43);
+}
+
+.article {
+    min-height: 20rem;
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.articleImage {
+    min-height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.articleImage img {
+    max-width: 16rem;
+    max-height: 16rem;
+    border: 1rem solid white;
 }
 
 footer {
@@ -22,7 +62,7 @@ footer {
 }
 
 .menu-button i.material-icons{
-    font-size: 5rem;
+    font-size: 6rem;
 }
 
 .dynamic-menu.visible{
@@ -44,15 +84,19 @@ footer {
     display: block;
 }
 
+a {
+    padding: 1rem;
+    background-color: rgb(30, 109, 155);
+    text-align: center;
+}
 a:link, a:visited {
     color: rgb(255, 255, 255);
     text-align: center;
     text-decoration: none;
-    margin: 1rem;
   }
   
   a:hover, a:active {
-    background-color: rgb(73, 141, 33);
+    background-color: rgb(70, 156, 206);
   }
 
 /*Desktop*/
@@ -63,7 +107,7 @@ a:link, a:visited {
 
     body {
         display: grid;
-        grid-template-rows: 5rem 3rem 1fr 5rem;
+        grid-template-rows: 6rem 4rem 1fr 5rem;
         grid-template-columns: 100%;
         grid-template-areas: 
         'hd'
@@ -74,10 +118,11 @@ a:link, a:visited {
 
     .static-menu {
         grid-area: nv;
-        background: lemonchiffon;
+        background: black;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-evenly;
+        align-items: center;
     }
 
     .dynamic-menu {
@@ -93,9 +138,13 @@ a:link, a:visited {
         display: inline;
     }
 
+    #title {
+        font-size: 3rem;
+    }
+
     body {
         display: grid;
-        grid-template-rows: 5rem 1fr 5rem;
+        grid-template-rows: 6rem 1fr 5rem;
         grid-template-areas:
         'hd'
         'mn'

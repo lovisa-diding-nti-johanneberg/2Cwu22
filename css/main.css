@@ -73,11 +73,6 @@ main {
     background-color: rgb(100, 21, 43);
 }
 
-footer {
-    grid-area: ft;
-    background: indianred;
-}
-
 .menu-button i.material-icons{
     font-size: 6rem;
 }
@@ -116,6 +111,14 @@ a:link, a:visited {
     background-color: rgb(70, 156, 206);
   }
 
+  footer {
+    grid-area: ft;
+    background: rgb(30, 109, 155);
+    min-height: 10rem;
+    color: lightblue;
+    padding: 1rem;
+}
+
 /*Desktop*/
 @media screen and (min-width:600px) {
     .menu-button {
@@ -140,7 +143,7 @@ a:link, a:visited {
         top: 6rem;
         height: 4rem;
         grid-area: nv;
-        background: black;
+        background: lightblue;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -176,7 +179,7 @@ a:link, a:visited {
     .dynamic-menu {
         height: 100vh;
         width: 50vw;
-        background: hotpink;
+        background: rgb(30, 109, 155);
         position: fixed;
         top: 0;
         left: -90vw;
@@ -190,9 +193,9 @@ a:link, a:visited {
     .dynamic-menu a {
         display: flex;
         justify-content: center;
-        padding: 2rem;
-        background-color: green;
-        border-radius: 2rem;
+        padding: 1rem;
+        background-color: rgb(30, 109, 155);
+        border-bottom: 5px solid lightblue;
     }
     .static-menu {
         display: none;
